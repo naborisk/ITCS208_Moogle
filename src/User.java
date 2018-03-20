@@ -1,6 +1,6 @@
-// Name:
-// Student ID:
-// Section: 
+// Name: Tussoun Jitpanyoyos
+// Student ID: 6088030
+// Section: 1
 
 public class User {
 	public int uid;
