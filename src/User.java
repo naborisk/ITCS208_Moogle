@@ -8,14 +8,14 @@ public class User {
 	public User(int _id){
 		
 		// YOUR CODE GOES HERE
+		uid = _id;
 		
 	}
 	
 	public int getID(){
 		
 		// YOUR CODE GOES HERE
-		
-		return -1;
+		return uid;
 	}
 
 }

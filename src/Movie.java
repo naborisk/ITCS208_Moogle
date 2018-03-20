@@ -1,6 +1,6 @@
-// Name:
-// Student ID:
-// Section: 
+// Name: Tussoun Jitpanyoyos
+// Student ID: 6088030
+// Section: 1
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,35 +20,42 @@ public class Movie {
 	
 	public Movie(int _mid, String _title, int _year){
 		// YOUR CODE GOES HERE
-		
+
+		mid = _mid;
+		title = _title;
+		year = _year;
+		tags = new HashSet<>();
+		ratings = new HashMap<>();
+		avgRating = 0.0;
 	}
 	
 	public int getID() {
 		
 		// YOUR CODE GOES HERE
-		return -1;
+		return mid;
 	}
 	public String getTitle(){
 		
 		// YOUR CODE GOES HERE
-		return null;
+		return title;
 	}
 	
 	public Set<String> getTags() {
 		
 		// YOUR CODE GOES HERE
-		return null;
+		return tags;
 	}
 	
 	public void addTag(String tag){
 		
 		// YOUR CODE GOES HERE
+		tags.add(tag);
 	}
 	
 	public int getYear(){
 		
 		// YOUR CODE GOES HERE
-		return -1;
+		return year;
 	}
 	
 	public String toString()
@@ -60,25 +67,38 @@ public class Movie {
 	public double calMeanRating(){
 		
 		// YOUR CODE GOES HERE
-		return -1;
+		double total = 0.0;
+
+		for(Integer key: ratings.keySet()){
+			total += ratings.get(key).rating;
+
+		}
+		avgRating = total/ratings.size();
+
+		return avgRating;
 	}
 	
 	public Double getMeanRating(){
 		
 		// YOUR CODE GOES HERE
-		return -1.0;
+		return avgRating;
 	}
 	
 	public void addRating(User user, Movie movie, double rating, long timestamp) {
 		// YOUR CODE GOES HERE
-		
+
+//		if(ratings.get(user.getID()).u == null){
+//			r = new Rating(user, movie, rating, timestamp);
+//		}else{
+//			r = ratings.get(user.getID());
+//		}
+		ratings.put(user.uid, new Rating(user, movie, rating, timestamp));
 	}
 	
 	public Map<Integer, Rating> getRating(){
 		
 		// YOUR CODE GOES HERE
-		
-		return null;
+		return ratings;
 	}
 	
 }

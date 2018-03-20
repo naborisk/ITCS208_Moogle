@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ITCS208_Moogle:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ITCS208_Moogle_jar</output-path>
+    <root id="archive" name="ITCS208_Moogle.jar">
+      <element id="module-output" name="ITCS208_Moogle" />
+    </root>
+  </artifact>
+</component>
