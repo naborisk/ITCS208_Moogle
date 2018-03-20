@@ -122,11 +122,14 @@ public class SimpleMovieSearchEngine implements BaseMovieSearchEngine {
 
 		if(title == null) return movieList;
 
-		for(Integer key: movies.keySet()){
-			if(movies.get(key).getTitle().toLowerCase().startsWith(title.toLowerCase()) && exactMatch){
-				movieList.add(movies.get(key));
- 			}else if(movies.get(key).getTitle().toLowerCase().contains(title.toLowerCase())){
-				movieList.add(movies.get(key));
+		if(exactMatch){
+			for(Integer key: movies.keySet()){
+				if(movies.get(key).getTitle().toLowerCase().startsWith(title.toLowerCase())) movieList.add(movies.get(key));
+
+			}
+		}else{
+			for(Integer key: movies.keySet()){
+				if(movies.get(key).getTitle().toLowerCase().contains(title.toLowerCase())) movieList.add(movies.get(key));
 			}
 		}
 		return movieList;
@@ -181,7 +184,7 @@ public class SimpleMovieSearchEngine implements BaseMovieSearchEngine {
 		if(tag != null) movieList.retainAll(tagMatch);
 		if(year != -1) movieList.retainAll(yearMatch);
 		
-		return new LinkedList<>(movieList);
+		return sortByTitle(new LinkedList<>(movieList), false);
 	}
 
 	@Override
