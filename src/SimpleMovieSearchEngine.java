@@ -169,7 +169,7 @@ public class SimpleMovieSearchEngine implements BaseMovieSearchEngine {
 
 		// YOUR CODE GOES HERE
 
-		HashSet<Movie> movieList = new HashSet<>(); //HashSet (or any set) don't allow repetitions
+		HashSet<Movie> movieList = new HashSet<>(); //HashSet (or any set) doesn't allow repetitions
 		LinkedList<Movie> titleMatch, tagMatch, yearMatch;
 
 		titleMatch = (LinkedList<Movie>) searchByTitle(title, false);
